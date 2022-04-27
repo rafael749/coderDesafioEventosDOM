@@ -1,81 +1,142 @@
 
 
+/*******************************************************************************************************************/
+//Carrito de Compras 
+/*******************************************************************************************************************/
 
 
-alert("Hola, vamos a calcular el total de una compra de 3 productos más su IVA!")
+let carritoCompras = () => {
+    let comenzarAcomprar = prompt('Para comenzar a comprar en el sitio escriba: comprar -  Para finalizar programa escriba Salir. Muchas Gracias');
 
-let product1 = parseFloat(prompt("Introducí el precio del primer producto"));
-let product2 = parseFloat(prompt("Introducí el precio del segundo producto"));
-let product3 = parseFloat(prompt("Introducí el precio del tercer producto"));
-    
-function calculoIva(product1, product2, product3) {
-    const iva = 1.21;
-    let result = (product1 + product2 + product3) * iva
-    return result
-}
-    
-alert(`El total con IVA es de $${Math.round(calculoIva(product1, product2, product3))}`)
-    
-alert("Tenemos descuento del 10% en todas las compras seleccionadas!")
-    
-function descuento(calculoIva) {
-    let discount = 0.10;
-    let porcentaje = calculoIva(product1, product2, product3) * discount;
-    let descontar = calculoIva(product1, product2, product3) - porcentaje;
-    return descontar
-}
-    
-alert(`Su nuevo total con descuento es $${descuento(calculoIva)}`)
-
-
-
-/**********************************Realizar Operacion matemática*******************************************************/
-
-
-
-
-let operacion = prompt("Operacion para sumr ingresa +par restar -  Multiplicacion(*), Division(/)")
-let primerValor = parseInt(prompt("Ingresa el primer valor que quieras operar"))
-let segundoValor = parseInt(prompt("Ingresa el segundo valor que quieras operar"))
-
-if(operacion === "+"){
-    let resultado = primerValor + segundoValor;
-    alert(`El resultado de tu suma es: ${resultado}`);
-}else if (operacion === "-"){
-    let resultado = primerValor - segundoValor;
-    alert(`El resultado de tu resta es: ${resultado}`);
-}else if(operacion === "*"){
-    let resultado = primerValor * segundoValor;
-    alert(`El resultado de tu multiplicacion es: ${resultado}`);
-} else if(operacion === "/"){
-    let resultado = parseFloat(primerValor / segundoValor)
-    alert(`El resultado de tu divion es: ${resultado}`);
-}else{alert("Ingresa un signo valido: +,-,*,/")
+    eleccionDelUsuario(comenzarAcomprar);
 }
 
 
 
+/***********Decisión del usuario, Si decide comprar comienza seleccionando la Categoría?********************************/
 
 
-/**************************Calculadora****************************/
 
+let eleccionDelUsuario = comenzarAcomprar => {
 
-let num = prompt("Ingrese un número del 1 al 10");
+    if (comenzarAcomprar != 'comprar') {
 
-num = parseInt(num);
+        alert('Lamentamos que te vayas sin realizar una compra, vuelve pronto');
+        alert('En caso que te hubieras equivocado, presiona F5 y escribe comprar. Muchas Gracias');
 
-while (num<=0 || num>10) {
-    num = prompt("Número incorrecto, intentelo de nuevo");    
+    } else {
+
+        let totalCategoriasSeleccionadas = 0;
+
+        while (comenzarAcomprar != 'salir') {
+
+            let carritoCompras = prompt("Seleccione categoria del producto a comprar: 1 para Ofertas - 2 para Tecnologías - 3 para electrodomesticos - 4 para accesorios ");
+
+            switch (carritoCompras) {
+                case "1":
+                    alert('Seleccionaste Ofertas');
+                    prod('1');
+                    break;
+                case "2":
+                    alert('Seleccionaste Tecnologías');
+                    prod('2');
+                    break;
+                case "3":
+                    alert('Seleccionaste electrodomesticos');
+                    prod('3');
+                    break;
+                case "4":
+                    alert('Seleccionaste accesorios');
+                    prod('4');
+                    break;
+                default:
+                    alert(`Lo siento no disponemos de ese producto ${carritoCompras}. Debes seleccionar correctamente deñ desde el 1 al 4`);
+                    break;
+            }
+
+            comenzarAcomprar = prompt('Presiona comprar para continuar comprando, Para finalizar programa escriba Salir. Muchas Gracias');
+
+            totalCategoriasSeleccionadas++;
+        }
+
+        alert(` has comprado un total de ${totalCategoriasSeleccionadas} Productos`);
     }
+}
 
-    alert("texto'>Tabla del " + num);   
 
-    for (let i=1;i<=10;i++) {
-        multiplicacion = num*i;         
-        alert("El resultado de "+ num + " X "+ i + " es: " + multiplicacion + " ");
+/*******************Continuamos la compra seleccionando el producto******************/
+
+
+
+let prod = prod => {
+
+    let producto = prompt("Ahora Elige el producto a comprar: 1 para Iphone - 2 para Smart-Tv - 3 para Heladera-Smart - 4 para Silla-Gamer ");
+    let produ = 0;
+    switch (producto) {
+        case "1":
+            alert('Seleccionaste Iphone precio $500');
+            produ = 500;
+            break;
+        case "2":
+            alert('Seleccionaste Smart-Tv precio $600');
+            produ = 600;
+            break;
+        case "3":
+            alert('Seleccionaste Heladera-Smart $700');
+            produ = 700;
+            break;
+        case "4":
+            alert('Seleccionaste Silla-Gamer $800');
+            produ = 800;
+            break;
+        default:
+            alert(`Lo siento no disponemos de ese producto ${producto}`);
+            break;
+    }
+    return produ;
+}
+
+
+
+
+
+
+                    /****************************************************/
+                                    //Inicio del programa
+                    /****************************************************/
+
+//Dado que le sitio se encuentra en Desarrollo, solo se permite ingresar como Admin.
+
+//Login como Admin. 
+
+let password = prompt('Ingresa tu password de Administrador para ingresar');
+
+if (password != 'admin123') {
+
+    for (let intentos = 1; intentos <= 4; intentos++) {
         
+        alert(`La password ${password} ingresada es incorrecta`);
+
+        alert('intentos hasta el momento '+intentos);
+
+        password = prompt('Vuelve a ingresar tu password de Administrador para ingresar');        
+
+     if (intentos > 2) {
+            alert('bloqueaste tu cuenta. Por favor presiona F5 y vuelve a intentar');
+            break;
+        }
     }
+}else{
+
+//Inicia el carrito de compras
+
+    alert('Bienvenidos al mejor Ecommerce de CoderHouse');
+    carritoCompras();
+
+}
+
+/**************** F I N del programa =) ************************************/
 
 
 
-    
+
