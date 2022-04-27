@@ -1,9 +1,38 @@
+/*
+1)  Para este desafío simulo un carrito de compras, en el cual se debe loguar primero con la password correcta. -->  admin123
+        Si la misma se ingresa 3 veces mal, Al 4to intento se le infica al usuario que está bloqueado.
+        Debe presionar F5 para volver a intentar.
+
+2)  Si el usuario ingresa al sistema de forma correcta:
+        En caso de arrepentirse puede "salir". El sistema envia un mensaje indicando que no realizó ninguna compra. y finaliza el mismo
+
+        Si desea comprar en nuestra tienda debe escribir "comprar".
+        para comenzar seleccionando la categoría. o escribir "salir".
+        Si ingresa una categoría que no está en sistema, se le indica que vuelva a ingresarla.
+        Luego de seleccionar la categoria, continúa seleccionando el producto. 
+        Si ingresa un producto que  que no está en sistema, se le indica que vuelva a ingresarlo.
+
+3)  Si desea continuar comprando, debe escribir "comprar" -> Se repite el proceso 2)
+        Caso contrario "salir" para finalizar el programa.
+
+4)Al finalizar la compra se le indica al usuario, cuantos productos ha comprado
+
+
+
+Muchas Gracias.-
+
+PD: el inicio del programa comienza en la linea 120.
+
+*/
+
+
+
+
 
 
 /*******************************************************************************************************************/
 //Carrito de Compras 
 /*******************************************************************************************************************/
-
 
 let carritoCompras = () => {
     let comenzarAcomprar = prompt('Para comenzar a comprar en el sitio escriba: comprar -  Para finalizar programa escriba Salir. Muchas Gracias');
@@ -13,9 +42,7 @@ let carritoCompras = () => {
 
 
 
-/***********Decisión del usuario, Si decide comprar comienza seleccionando la Categoría?********************************/
-
-
+/***********Decisión del usuario, Si decide comprar comienza seleccionando la Categoría********************************/
 
 let eleccionDelUsuario = comenzarAcomprar => {
 
@@ -50,7 +77,7 @@ let eleccionDelUsuario = comenzarAcomprar => {
                     prod('4');
                     break;
                 default:
-                    alert(`Lo siento no disponemos de ese producto ${carritoCompras}. Debes seleccionar correctamente deñ desde el 1 al 4`);
+                    alert(`Lo siento no disponemos de ese producto ${carritoCompras}. Debes seleccionar correctamente del desde el 1 al 4`);
                     break;
             }
 
@@ -63,10 +90,7 @@ let eleccionDelUsuario = comenzarAcomprar => {
     }
 }
 
-
 /*******************Continuamos la compra seleccionando el producto******************/
-
-
 
 let prod = prod => {
 
@@ -96,44 +120,40 @@ let prod = prod => {
     return produ;
 }
 
-
-
-
-
-
                     /****************************************************/
                                     //Inicio del programa
                     /****************************************************/
 
-//Dado que le sitio se encuentra en Desarrollo, solo se permite ingresar como Admin.
 
-//Login como Admin. 
+                    //LOGIN
+
+//Password a Ingresar: admin123
 
 let password = prompt('Ingresa tu password de Administrador para ingresar');
 
-if (password != 'admin123') {
+    for (let intentos = 1; intentos < 5; intentos++) {
 
-    for (let intentos = 1; intentos <= 4; intentos++) {
+        if (password != 'admin123') {
+
+            alert(`La password ${password} ingresada es incorrecta. Intento Nro: ${intentos}`);
+
+            password = prompt('Vuelve a ingresar tu password de Administrador para ingresar');        
+
+            if (intentos > 2) {
+                alert('bloqueaste tu cuenta. Por favor presiona F5 y vuelve a intentar');
+                break;
+            }
+        }else{
+
+            //Inicia el carrito de compras
         
-        alert(`La password ${password} ingresada es incorrecta`);
-
-        alert('intentos hasta el momento '+intentos);
-
-        password = prompt('Vuelve a ingresar tu password de Administrador para ingresar');        
-
-     if (intentos > 2) {
-            alert('bloqueaste tu cuenta. Por favor presiona F5 y vuelve a intentar');
+            alert('Bienvenidos al mejor Ecommerce de CoderHouse');
+            carritoCompras();
             break;
+        
         }
     }
-}else{
 
-//Inicia el carrito de compras
-
-    alert('Bienvenidos al mejor Ecommerce de CoderHouse');
-    carritoCompras();
-
-}
 
 /**************** F I N del programa =) ************************************/
 
