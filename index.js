@@ -42,6 +42,19 @@ Muchas Gracias.-
 		ANTES En la entrega anterior lo harcodeaba a mano el numero  */			
 
 
+
+/******************************************************************************************************/
+
+//	Desafío Complementario DOM
+
+
+// Si el usuario escribe su nombre, éste se visualizará su nombre donde se encuentra el ícono del Usuario.
+
+//Si el usuario desea esconder la etiqueta "Sin Stock", lo puede hacer. escribiendo true en el prompt, caso contrario, continuarán visualizandose.
+
+//El usuario tiene la posibilidad añadir un nuevo producto ( por ahora..)
+
+
 class Categoria{
     constructor(id,nombre,estado){
         this.id = id;
@@ -221,6 +234,35 @@ let password = prompt('Ingresa tu password de Administrador para ingresar');
             //Inicia el carrito de compras
         
             alert('Bienvenidos al mejor Ecommerce de CoderHouse');
+		
+		//setea el nombre del usuario en el icono del usuario
+		let usuarioLogueado = prompt('Ingrese su nombre de usuario');
+		let userHtml = document.getElementsByClassName('usuario')[0].innerHTML = usuarioLogueado
+		
+		//mostrar o esconder etiqueta "Sin Stock"
+		if (etiquetaSinStock === "true"){	
+			for(sinStock of productoSinStock){console.log(sinStock.hidden= true)}
+				alert('Se borro la etiqueta Sin Stock de los productos')
+		}else{
+			alert('ha seleccionado otro valor. las etiqueta no será eliminada.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
+		}
+		
+		// Posivilidad del usuario añadir un nuevo producto en la seccion OFERTAS
+		let agregarProductoNuevo = prompt('Producto Nuevo disponible a Agregar: \nNuevo - Salero. Seleccione 1. Sino cualquier tecla. Muchas Gracias ')
+
+		if (agregarProductoNuevo === "1"){	
+
+			let grillaPadre = document.getElementsByClassName('grillaPadre')
+			let productoNuevoSalero = document.createElement("div")
+			productoNuevoSalero.className = 'class="producto8 productos card__css-manual rounded';
+			productoNuevoSalero.innerHTML = `<span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span> <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span> <img src="img/salero.jpg" alt="Salero"> <div class="productoDetalle"> <h3 class="precio__actual">$1.999</h3> <h5>Salero</h5> <h6>MODELO: MME73AM/A</h6> </div> <div class="carrito"> <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a> <i class="fas fa-eye eye"></i> <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a> </div>`
+			grillaPadre[0].appendChild(productoNuevoSalero);
+    
+			alert('Agregando nuevo producto.... \Seccion Ofertas')
+			}else{
+			alert('ha seleccionado otro valor. No se agregara el nuevo producto.')}
+		
+		
             carritoCompras();
             break;
         
