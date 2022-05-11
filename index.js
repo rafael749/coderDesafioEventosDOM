@@ -105,7 +105,7 @@ const categorias = [
        				 console.log(sinStock.hidden= true)
            			 contador++;
    			 }
-	alert('Se borro la etiqueta Sin Stock de un total de '++contador+' productos ')
+	alert('Se borro la etiqueta Sin Stock de un total de '+contador+' productos ')
 		}else{
 			alert('ha ingresado un valor distinto de true. las etiqueta no se eliminará.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
 		}
