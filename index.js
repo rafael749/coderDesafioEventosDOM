@@ -287,6 +287,7 @@ let password = prompt('Ingresa tu password de Administrador para ingresar: admin
 	let eleccionUsuarioAejecutar = prompt('Seleccione que desea ejecutar: 1 para desafío Complementario DOM, 2 para entregas anteriores.');
 		if(eleccionUsuarioAejecutar=== '1'){
 			EntregaComplementariaDOM();
+			break;
 		}else{
 		
 		
