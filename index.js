@@ -88,7 +88,56 @@ const categorias = [
 
 
 
+//funcion para seleccionar probar desafío complementario DOM, ó entregas anteriores
 
+  let EntregaComplementariaDOM = ()=> {
+	  			//setea el nombre del usuario en el icono del usuario
+		let usuarioLogueado = prompt('Ingrese su nombre de usuario');
+		let userHtml = document.getElementsByClassName('usuario')[0].innerHTML = usuarioLogueado
+		
+		//mostrar o esconder etiqueta "Sin Stock"
+		let etiquetaSinStock = prompt('Desea Ocultar la etiqueta "Sin Stock" en los productos sin stock?,\n escriba:  true, o cualquier letra para continuar mostrando la misma ');
+		let productoSinStock = document.getElementsByClassName('cart_menu cart_menu_Nuevo badge bg-secondary');
+		
+		if (etiquetaSinStock === "true"){	
+			let contador = 0;
+			for(sinStock of productoSinStock){
+       				 console.log(sinStock.hidden= true)
+           			 contador++;
+   			 }
+	alert('Se borro la etiqueta Sin Stock de los productos '+contador)
+		}else{
+			alert('ha ingresado un valor distinto de true. las etiqueta no se eliminará.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
+		}
+		
+		// Posivilidad del usuario añadir un nuevo producto en la seccion OFERTAS
+		let agregarProductoNuevo = prompt('Producto Nuevo disponible para Agregar en Seccion Ofertas: \nNuevo - Salero. Seleccione 1. Sino cualquier tecla. Muchas Gracias ')
+
+		if (agregarProductoNuevo === "1"){	
+
+			let grillaPadre = document.getElementsByClassName('grillaPadre')
+			let productoNuevoSalero = document.createElement("div");
+			productoNuevoSalero.className = 'class="producto8 productos card__css-manual rounded';
+			productoNuevoSalero.innerHTML = `<span id="" data-action="cart-can"
+											 class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span> 
+											 <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span> 
+											 <img src="img/salero.jpg" alt="Salero"> 
+											 <div class="productoDetalle"> 
+											 <h3 class="precio__actual">$1.999</h3> 
+											 <h5>Salero</h5> 
+											 <h6>MODELO: MME73AM/A</h6> 
+											 </div> 
+												<div class="carrito"> 
+													<a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a> 
+													<i class="fas fa-eye eye"></i> 
+													<a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a> 
+												</div>`
+			grillaPadre[0].appendChild(productoNuevoSalero);
+    
+			alert('Agregando nuevo producto.... \Seccion Ofertas')
+			}else{
+			alert('ha seleccionado otro valor. No se agregara el nuevo producto.')}
+  }
 
 
 /*******************************************************************************************************************/
@@ -235,45 +284,15 @@ let password = prompt('Ingresa tu password de Administrador para ingresar: admin
         
             alert('Bienvenidos al mejor Ecommerce de CoderHouse');
 		
-		//setea el nombre del usuario en el icono del usuario
-		let usuarioLogueado = prompt('Ingrese su nombre de usuario');
-		let userHtml = document.getElementsByClassName('usuario')[0].innerHTML = usuarioLogueado
-		
-		//mostrar o esconder etiqueta "Sin Stock"
-		let etiquetaSinStock = prompt('Desea Ocultar la etiqueta "Sin Stock" en los productos sin stock?,\n escriba:  true, o cualquier letra para continuar mostrando la misma ');
-		let productoSinStock = document.getElementsByClassName('cart_menu cart_menu_Nuevo badge bg-secondary');
-		if (etiquetaSinStock === "true"){	
-			let contador = 0;
-			for(sinStock of productoSinStock){
-       				 console.log(sinStock.hidden= true)
-           			 contador++;
-   			 }
-	alert('Se borro la etiqueta Sin Stock de los productos '+contador)
+	let eleccionUsuarioAejecutar = prompt('Seleccione que desea ejecutar: 1 para desafío Complementario DOM, 2 para entregas anteriores.');
+		if(eleccionUsuarioAejecutar=== '1'){
+			EntregaComplementariaDOM();
 		}else{
-			alert('ha ingresado un valor distinto de true. las etiqueta no se eliminará.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
-		}
-		
-		// Posivilidad del usuario añadir un nuevo producto en la seccion OFERTAS
-		let agregarProductoNuevo = prompt('Producto Nuevo disponible a Agregar: \nNuevo - Salero. Seleccione 1. Sino cualquier tecla. Muchas Gracias ')
-
-		if (agregarProductoNuevo === "1"){	
-
-			let grillaPadre = document.getElementsByClassName('grillaPadre')
-			let productoNuevoSalero = document.createElement("div")
-			productoNuevoSalero.className = 'class="producto8 productos card__css-manual rounded';
-			productoNuevoSalero.innerHTML = `<span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span> <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span> <img src="img/salero.jpg" alt="Salero"> <div class="productoDetalle"> <h3 class="precio__actual">$1.999</h3> <h5>Salero</h5> <h6>MODELO: MME73AM/A</h6> </div> <div class="carrito"> <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a> <i class="fas fa-eye eye"></i> <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a> </div>`
-			grillaPadre[0].appendChild(productoNuevoSalero);
-    
-			alert('Agregando nuevo producto.... \Seccion Ofertas')
-			}else{
-			alert('ha seleccionado otro valor. No se agregara el nuevo producto.')}
 		
 		
-           /* carritoCompras();*/
+            carritoCompras();
             break;
+		}
         
         }
     }
-
-
-/**************** F I N del programa =) ************************************/
