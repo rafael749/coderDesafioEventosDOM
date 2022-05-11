@@ -215,7 +215,7 @@ let prod = prod => {
 
 //Password a Ingresar: admin123
 
-let password = prompt('Ingresa tu password de Administrador para ingresar');
+let password = prompt('Ingresa tu password de Administrador para ingresar: admin123');
 
     for (let intentos = 1; intentos < 5; intentos++) {
 
@@ -240,7 +240,8 @@ let password = prompt('Ingresa tu password de Administrador para ingresar');
 		let userHtml = document.getElementsByClassName('usuario')[0].innerHTML = usuarioLogueado
 		
 		//mostrar o esconder etiqueta "Sin Stock"
-		let etiquetaSinStock = prompt('Desea Ocultar la etiqueta "Sin Stock" en los productos?,\n escriba:  true, o cualquier letra para ocultar la misma ')
+		let etiquetaSinStock = prompt('Desea Ocultar la etiqueta "Sin Stock" en los productos sin stock?,\n escriba:  true, o cualquier letra para continuar mostrando la misma ');
+		let productoSinStock = document.getElementsByClassName('cart_menu cart_menu_Nuevo badge bg-secondary');
 		if (etiquetaSinStock === "true"){	
 			let contador = 0;
 			for(sinStock of productoSinStock){
@@ -249,7 +250,7 @@ let password = prompt('Ingresa tu password de Administrador para ingresar');
    			 }
 	alert('Se borro la etiqueta Sin Stock de los productos '+contador)
 		}else{
-			alert('ha seleccionado otro valor. las etiqueta no será eliminada.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
+			alert('ha ingresado un valor distinto de true. las etiqueta no se eliminará.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
 		}
 		
 		// Posivilidad del usuario añadir un nuevo producto en la seccion OFERTAS
