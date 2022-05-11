@@ -268,7 +268,7 @@ let password = prompt('Ingresa tu password de Administrador para ingresar');
 			alert('ha seleccionado otro valor. No se agregara el nuevo producto.')}
 		
 		
-            carritoCompras();
+           /* carritoCompras();*/
             break;
         
         }
