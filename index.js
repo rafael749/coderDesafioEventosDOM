@@ -240,9 +240,14 @@ let password = prompt('Ingresa tu password de Administrador para ingresar');
 		let userHtml = document.getElementsByClassName('usuario')[0].innerHTML = usuarioLogueado
 		
 		//mostrar o esconder etiqueta "Sin Stock"
+		let etiquetaSinStock = prompt('Desea Ocultar la etiqueta "Sin Stock" en los productos?,\n escriba:  true, o cualquier letra para ocultar la misma ')
 		if (etiquetaSinStock === "true"){	
-			for(sinStock of productoSinStock){console.log(sinStock.hidden= true)}
-				alert('Se borro la etiqueta Sin Stock de los productos')
+			let contador = 0;
+			for(sinStock of productoSinStock){
+       				 console.log(sinStock.hidden= true)
+           			 contador++;
+   			 }
+	alert('Se borro la etiqueta Sin Stock de los productos '+contador)
 		}else{
 			alert('ha seleccionado otro valor. las etiqueta no será eliminada.\nEn presione F5 para visualizarla nuevamente. Muchas gracias')
 		}
