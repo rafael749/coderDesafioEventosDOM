@@ -10,7 +10,7 @@ for(let productoEnCanasto of listaCarrito){
                                             <div class="d-flex justify-content-between">
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
-                                                        <img src="${productoEnCanasto.imagen}" class="img-fluid rounded-3 imgPago" alt="Shopping item">
+                                                        <img src="../${productoEnCanasto.imagen}" class="img-fluid rounded-3 imgPago" alt="Shopping item">
                                                     </div>
                                                     <div class="ms-3">
                                                         <h5>${productoEnCanasto.nombreProducto}</h5>

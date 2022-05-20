@@ -11,7 +11,7 @@ productos = [
 		modeloProducto:"MODELO: 12 Pro 500gb/A",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Nuevo",
-        imagen:"../img/iphone.jpg",
+        imagen:"img/iphone.jpg",
 		idProducto:1
 	},
 	{
@@ -22,7 +22,7 @@ productos = [
 		modeloProducto:"MODELO: 13 Plus",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/iphone2.jpg",
+        imagen:"img/iphone2.jpg",
 		idProducto:2
 	},
 	{
@@ -33,7 +33,7 @@ productos = [
 		modeloProducto:"MODELO XCJDQ 9 Gen",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/tablet2.jpg",
+        imagen:"img/tablet2.jpg",
 		idProducto:3
 	},
 	{
@@ -44,7 +44,7 @@ productos = [
 		modeloProducto:"MODELO T490",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/notebook.jpg",
+        imagen:"img/notebook.jpg",
 		idProducto:4
 	},
 	{
@@ -55,7 +55,7 @@ productos = [
 		modeloProducto:"Modelo OSLOAMOQW",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Nuevo",
-        imagen:"../img/tablet4.jpg",
+        imagen:"img/tablet4.jpg",
 		idProducto:5
 	},
 	{
@@ -66,7 +66,7 @@ productos = [
 		modeloProducto:"Modelo AHNOHSAN Pro",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/mouseGamer2.jpg",
+        imagen:"img/mouseGamer2.jpg",
 		idProducto:6
 	},
 	{
@@ -77,7 +77,7 @@ productos = [
 		modeloProducto:"Modelo EHOOQWHWQ",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/tablet3.jpg",
+        imagen:"img/tablet3.jpg",
 		idProducto:7
 	},
 	{
@@ -88,7 +88,7 @@ productos = [
 		modeloProducto:"Modelo: 15 PLus",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/iphone2.jpg",
+        imagen:"img/iphone2.jpg",
 		idProducto:8
 	},
 		// Electrodomésticos
@@ -100,7 +100,7 @@ productos = [
 		modeloProducto:"MODELO: MME73AM/A",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/smartv2.png",
+        imagen:"img/smartv2.png",
 		idProducto:9
 	},
 	{
@@ -111,7 +111,7 @@ productos = [
 		modeloProducto:"MODELO: TCL MOHSON",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/smartv.png",
+        imagen:"img/smartv.png",
 		idProducto:10
 	},
 	{
@@ -122,7 +122,7 @@ productos = [
 		modeloProducto:"Modelo OASHNIQW",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Nuevo",
-        imagen:"../img/Ventilador2.jpg",
+        imagen:"img/Ventilador2.jpg",
 		idProducto:11
 	},
 	{
@@ -133,7 +133,7 @@ productos = [
 		modeloProducto:"Modelo IOJSOM Pro",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/heladeraInteligente.jpg",
+        imagen:"img/heladeraInteligente.jpg",
 		idProducto:12
 	},
 	{
@@ -144,7 +144,7 @@ productos = [
 		modeloProducto:"Modelo OHOQDMOWDQ",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/cocina.png",
+        imagen:"img/cocina.png",
 		idProducto:13
 	},
 	{
@@ -155,7 +155,7 @@ productos = [
 		modeloProducto:"Planetaria 2 Lts",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/batidora.jpg",
+        imagen:"img/batidora.jpg",
 		idProducto:14
 	},
 	{
@@ -166,7 +166,7 @@ productos = [
 		modeloProducto:"Planet Pink 2Lt.",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"",
-        imagen:"../img/batidora2.jpg",
+        imagen:"img/batidora2.jpg",
 		idProducto:15
 	},
 	{
@@ -177,7 +177,7 @@ productos = [
 		modeloProducto:"Modelo EHOOQWHWQ",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/freidora.jpg",
+        imagen:"img/freidora.jpg",
 		idProducto:16
 	},
 		
@@ -190,7 +190,7 @@ productos = [
 		modeloProducto:"MODELO: MME73AM/A",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Nuevo",
-        imagen:"../img/Auriculares3.jpg",
+        imagen:"img/Auriculares3.jpg",
 		idProducto:17
 	},
 	{
@@ -201,7 +201,7 @@ productos = [
 		modeloProducto:"Cargador 7 Plus: Red",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Nuevo",
-        imagen:"../img/protector ihpone.jpg",
+        imagen:"img/protector ihpone.jpg",
 		idProducto:18
 	},
 	{
@@ -212,7 +212,7 @@ productos = [
 		modeloProducto:"Microfono Pro Black",
 		envioProducto:"",
 		estadoProducto:"",
-        imagen:"../img/microfono.jpg",
+        imagen:"img/microfono.jpg",
 		idProducto:19
 	},
 	{
@@ -223,7 +223,7 @@ productos = [
 		modeloProducto:"MODELO: XIASNUQ",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/auriculares2.jpg",
+        imagen:"img/auriculares2.jpg",
 		idProducto:20
 	},
 	{
@@ -234,7 +234,7 @@ productos = [
 		modeloProducto:"MODELO: TipoResorte",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/cableUsb.jpg",
+        imagen:"img/cableUsb.jpg",
 		idProducto:21
 	},
 	{
@@ -245,7 +245,7 @@ productos = [
 		modeloProducto:"MODELO: XMZQEE",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/silla2.jpg",
+        imagen:"img/silla2.jpg",
 		idProducto:22
 	},
 	{
@@ -256,7 +256,7 @@ productos = [
 		modeloProducto:"MODELO: CMQAAA",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/silla.jpg",
+        imagen:"img/silla.jpg",
 		idProducto:23
 	},
 	{
@@ -267,7 +267,7 @@ productos = [
 		modeloProducto:"MODELO: XAHIQ",
 		envioProducto:"",
 		estadoProducto:"Nuevo",
-        imagen:"../img/reloj.jpg",
+        imagen:"img/reloj.jpg",
 		idProducto:24
 	},
 	{
@@ -278,7 +278,7 @@ productos = [
 		modeloProducto:"MODELO: RGXAHIQ",
 		envioProducto:"Envio Gratis",
 		estadoProducto:"Sin Stock",
-        imagen:"../img/reloj2.jpg",
+        imagen:"img/reloj2.jpg",
 		idProducto:25
 	}
 ]

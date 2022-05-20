@@ -13,7 +13,7 @@ let listaProductosAccesorios = JSON.parse(localStorage.getItem("productos"));
             producto.className = `producto${contadorProd} productos card__css-manual rounded`;
             producto.innerHTML = 	`<span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">${itemAccesorio.estadoProducto}</span> 
                                                 <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">${itemAccesorio.envioProducto}</span> 
-                                                <img src="${itemAccesorio.imagen}" alt="Producto Nuevo Agregado con Js"> 
+                                                <img src="../${itemAccesorio.imagen}" alt="Producto Nuevo Agregado con Js"> 
                                          <div class="productoDetalle"> 
                                                 <h3 class="precio__actual">${itemAccesorio.precioProducto}</h3> 
                                                 <h5>${itemAccesorio.nombreProducto}</h5> 
