@@ -30,6 +30,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <script src="js/sweetalert.min.js"></script>
+
     <title>Home Ecommerce - Web Developer</title>
     <link rel="stylesheet" href="css/style.css">
 
@@ -88,11 +92,11 @@
                     
                     <li class="cart"><a href="html/listaDeseos.html">
                             <i class="fas fa-heart"></i><span class=""> Deseos</span></a>
-                        <span id="" data-action="cart-can" class="cart_menu_num badge rounded-circle">8</span>
+                        <span id="idDeseos" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                     <li class="cart"><a href="html/pasarelaDePago.html">
                             <i class="fas fa-shopping-cart"></i><span class=""> Carrito</span></a>
-                        <span id="" data-action="cart-can" class="cart_menu_num badge rounded-circle">5</span>
+                        <span id="idCarrito" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                 </ul>
             </nav>
@@ -106,7 +110,7 @@
                 class="iconMEnu__span">Menu</span></label>
         <nav class="menu">
             <ul>
-                <li><a class="activo" aria-current="page" href="index.html">HOME</a></li>
+                <li><a class="activo" id="index" aria-current="page" href="index.html">HOME</a></li>
                 <li><a class="" aria-current="page" href="html/ofertas.html">OFERTAS</a></li>
                 <li><a class="" aria-current="page" href="html/tecnologias.html">TECNOLOGIA</a></li>
                 <li><a class="" aria-current="page" href="html/electrodomesticos.html">ELECTRODOMESTICOS</a></li>
@@ -187,144 +191,9 @@
     </div>
     <!---------------------------------------------------------INICIO GRID----------------------------------------------------------------------------------->
 
-    <main>
+    <main class="main">
         <div class="grillaPadre">
             <h1 class="h1__titulo1">Productos Nuevos <a href="html/tecnologias.html" class="h1__verMas"></a></h1>
-            <div class="producto1 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                <img src="img/Auriculares3.jpg" alt="Auriculares Beats">
-                <div class="productoDetalle">
-                    <h3 class="precio__actual">$31.999</h3>
-                    <h5>Auricular Beats</h5>
-                    <h6>MODELO: MME73AM/A</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto2 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                <img src="img/mouseGamer2.jpg" alt="Mouse Gamming">
-                <div class="productoDetalle">
-                    <h3>$33.857</h3>
-                    <h4>Mouse Gamming</h4>
-                    <h6>Solo³ Wireless - Rose</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto3 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                <img src="img/cafetera.jpg" alt="Cafetera">
-                <div class="productoDetalle">
-                    <h3>$480</h3>
-                    <h5>Cafetera 4Gen</h5>
-                    <h6>Modelo AMNINS Sony </h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto4 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                <img src="img/heladeraInteligente.jpg" alt="Heladera Smart">
-                <div class="productoDetalle">
-                    <h3>$59.000</h3>
-                    <h5>Heladera Smart</h5>
-                    <h6>Modelo OJO 250Lt</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <h2 class="h2__titulo2">Ofertas <a href="html/ofertas.html" class="h2__verMas"></a></h2>
-            <div class="producto5 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                <h6><span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge bg-secondary">Sin
-                        Stock</span></h6>
-                <img src="img/silla.jpg" alt="Silla Escritorio Pro Gamer">
-                <div class="productoDetalle">
-                    <h3 class="precio__anterior">$79.999</h3>
-                    <h3>$66.999</h3>
-                    <h5>Silla White-Rose</h5>
-                    <h6>Extremer Gamer Eergonómica</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto6 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Desc 35%</span>
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                </h6>
-                <img src="img/silla2.jpg" alt="Silla Escritorio Gammer Leyend">
-                <div class="productoDetalle">
-                    <h3 class="precio__anterior">$89.999</h3>
-                    <h3>$72.999</h3>
-                    <h5>Silla de Escritorio</h5>
-                    <h6>Eergonómica</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto7 productos card__css-manual rounded">
-                <h6><span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge bg-secondary">Sin
-                        Stock</span></h6>
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                <img src="img/Ventilador2.jpg" alt="Reloj Pro">
-                <div class="productoDetalle">
-                    <h3 class="precio__anterior">$5.999</h3>
-                    <h3>$4.999</h3>
-                    <h5>Ventilador Pie</h5>
-                    <h6>Serie S-Series</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-            <div class="producto8 productos card__css-manual rounded">
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Desc 45%</span>
-                <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio Gratis</span>
-                <img src="img/reloj2.jpg" alt="Reloj Pulsera">
-                <div class="productoDetalle">
-                    <h3 class="precio__anterior">$37.882</h3>
-                    <h3>$25.580</h3>
-                    <h5>Reloj Pro</h5>
-                    <h6>Sony Smart 4</h6>
-                </div>
-                <div class="carrito">
-                    <a href="/html/listaDeseos.html"><i class="fas fa-heart heart"></i></a>
-                    <i class="fas fa-eye eye"></i>
-                    <i class="fas fa-trash heart"></i>
-                    <a href="/html/pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                </div>
-            </div>
-        </div>
     </main>
     <!---------------------------------------------------------FIN GRID----------------------------------------------------------------------------------->
 
@@ -444,7 +313,8 @@
     </footer>
 
     <!--------------------------------------------------------- BOTON SUBIR------------------------------------------------------------------------------->
-  <!--  <script src="index.js" type="text/javascript"></script> -->
+    <script src="indexProductosEcommerce.js" type="text/javascript"></script>
+    <script src="clasesObjetos.js" type="text/javascript"></script>
     <script src="indexIncorporacionEventos.js" type="text/javascript"></script>
 </body>
 
