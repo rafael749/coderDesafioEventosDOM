@@ -109,7 +109,7 @@ const agregarAlCarrito = (idProd) => {
 	  },
 	  function(isConfirm){
 		  if (isConfirm) {
-			  window.location.href = "/html/pasarelaDePago.html"
+			  window.location.href = "html/pasarelaDePago.html"
 		 	} 
   });
 }
