@@ -21,6 +21,10 @@
     <title>Accesorios - Ecommerce Web Developer</title>
     <link rel="stylesheet" href="../css/style.css">
 
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script src="../js/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/2706ae0715.js" crossorigin="anonymous"></script>
 </head>
@@ -71,11 +75,11 @@
                     <li><a href="perfilUsuario.html"><i class="fa fa-user"></i><span class=""> Rafael M.</span></a></li>
                     <li class="cart"><a href="listaDeseos.html">
                         <i class="fas fa-heart"></i><span class="activo"> Deseos</span></a>
-                        <span id="" data-action="cart-can" class="cart_menu_num badge rounded-circle">8</span>
+                        <span id="idDeseos" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                     <li class="cart"><a href="pasarelaDePago.html">
                         <i class="fas fa-shopping-cart"></i><span> Carrito</span></a>
-                        <span id="" data-action="cart-can" class="cart_menu_num badge rounded-circle">5</span>
+                        <span id="idCarrito" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                 </ul>
             </nav>
@@ -110,126 +114,7 @@
     <main>
         <div class="grillaPadre">
             <h1 class="h1__titulo1"><a href="#" class="h1__verMas">Mi Lista de Deseos</a></h2>
-                <div class="producto1 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio
-                        Gratis</span>
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/Auriculares3.jpg" alt="Auriculares Beats">
-                    <div class="productoDetalle">
-                        <h3>$15.999</h3>
-                        <h5>Auriculares Beats</h5>
-                        <h6>MODELO: MME73AM/A</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto2 productos card__css-manual">
-                    <img src="../img/protector ihpone.jpg" alt="Cargador Ihpone">
-                    <div class="productoDetalle">
-                        <h3>$29.997</h3>
-                        <h4>Funda Carg Iphone</h4>
-                        <h6>Cargador Ihpone - Red</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto3 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio
-                        Gratis</span>
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/microfono.jpg" alt="Microfono Black">
-                    <div class="productoDetalle">
-                        <h3>$30,000</h3>
-                        <h5>Microfono Pro</h5>
-                        <h6>Microfono Black</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto4 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/auriculares2.jpg" alt="Auriculaes Beats">
-                    <div class="productoDetalle">
-                        <h3>$15.000</h3>
-                        <h5>Airucuales Beats</h5>
-                        <h6>MODELO: XIASNUQ</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto5 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio
-                        Gratis</span>
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/cableUsb.jpg" alt="Cable USB">
-                    <div class="productoDetalle">
-                        <h3>$999</h3>
-                        <h5>Cable USD</h5>
-                        <h6>MODELO: TipoResorte</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto6 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/candado.jpg" alt="Candado Digital">
-                    <div class="productoDetalle">
-                        <h3>$5998.000</h3>
-                        <h5>Candado Gitial</h5>
-                        <h6>MODELO: Xas Black</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto7 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio
-                        Gratis</span>
-                    <img src="../img/cafetera.jpg" alt="Cafetera Peabody">
-                    <div class="productoDetalle">
-                        <h3>$9999</h3>
-                        <h5>Cafetera Peabody</h5>
-                        <h6>MODELO: JAI 7Lt</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
-                <div class="producto8 productos card__css-manual">
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Envio badge rounded">Envio
-                        Gratis</span>
-                    <span id="" data-action="cart-can" class="cart_menu cart_menu_Nuevo badge rounded">Nuevo</span>
-                    <img src="../img/silla2.jpg" alt="Silla Gammer">
-                    <div class="productoDetalle">
-                        <h3>$79.000</h3>
-                        <h5>Silla Gamming</h5>
-                        <h6>MODELO: XMZQEE</h6>
-                    </div>
-                    <div class="carrito">
-                        <a href="../index.html"><i class="fas fa-heart activo"></i></a>
-                        <i class="fas fa-eye eye"></i>
-                        <a href="pasarelaDePago.html"><i class="fas fa-shopping-cart shopping-car"></i></a>
-                    </div>
-                </div>
+        </div>
     </main>
     <!---------------------------------------------------------FIN GRID----------------------------------------------------------------------------------->
 
@@ -350,7 +235,7 @@
     </footer>
 
     <!--------------------------------------------------------- BOTON SUBIR------------------------------------------------------------------------------->
-
+    <script src="../listaDeDeseos.js" type="text/javascript"></script>
 </body>
 
 </html>

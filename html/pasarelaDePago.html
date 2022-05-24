@@ -74,11 +74,11 @@
                     <li><a href="perfilUsuario.html"><i class="fa fa-user"></i><span> Rafael M.</span></a></li>
                     <li class="cart"><a href="listaDeseos.html">
                             <i class="fas fa-heart"></i><span> Deseos</span></a>
-                        <span id="" data-action="cart-can" class="cart_menu_num badge rounded-circle">8</span>
+                        <span id="idDeseos" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                     <li class="cart"><a href="pasarelaDePago.html">
                             <i class="fas fa-shopping-cart"></i><span class="activo"> Carrito</span></a>
-                        <span id="idCarrito" data-action="cart-can" class="cart_menu_num badge rounded-circle">5</span>
+                        <span id="idCarrito" data-action="cart-can" class="cart_menu_num badge rounded-circle">0</span>
                     </li>
                 </ul>
             </nav>
@@ -122,7 +122,7 @@
                                         <div class="d-flex justify-content-between align-items-center mb-4">
                                             <div>
                                                 <p class="mb-1">Carrito Compra</p>
-                                                <p class="mb-0">2 productos Seleccionados</p>
+                                                <p id="cantProdSeleccionados" class="mb-0">2 productos Seleccionados</p>
                                             </div>
                                             <div>
                                                 <p class="mb-0"><span class="text-muted disabled">Ordenar Por:</span> <a
@@ -190,20 +190,20 @@
                                                 <hr class="my-4">
                                                 <div class="d-flex justify-content-between">
                                                     <p class="mb-2">Subtotal</p>
-                                                    <p class="mb-2">u$s 2200.00</p>
+                                                    <p id="subTotalCarrito" class="mb-2">$ 2200.00</p>
                                                 </div>
                                                 <div class="d-flex justify-content-between">
-                                                    <p class="mb-2">Shipping</p>
-                                                    <p class="mb-2">u$s 200.00</p>
+                                                    <p class="mb-2">I.V.A</p>
+                                                    <p id= "ivaCarrito" class="mb-2">$ 200.00</p>
                                                 </div>
                                                 <div class="d-flex justify-content-between mb-4">
-                                                    <p class="mb-2">Total(Incl. taxes)</p>
-                                                    <p class="mb-2">u$s 2400.00</p>
+                                                    <p class="fs-5 mb-2">Total</p>
+                                                    <p id="totalCarrito" class="fs-5 mb-2">$ 2400.00</p>
                                                 </div>
                                                 <button type="button" class="btn btn-secondary btn-block btn-lg">
-                                                    <div class="d-flex justify-content-between">
-                                                        <span>u$s 2400.00</span>
-                                                        <span>Checkout <i
+                                                    <div class="d-flex justify-content-between success">
+                                                    <!--<span>$ 2400.00 </span>-->
+                                                        <span>Procesar Pago <i
                                                                 class="fas fa-long-arrow-alt-right ms-2"></i></span>
                                                     </div>
                                                 </button>

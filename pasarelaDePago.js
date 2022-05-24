@@ -3,11 +3,17 @@ if(localStorage.listaProductosCarrito != null){
 
     //MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE CARGADOS EN EL LOCALSTORAGE
     document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
-    
-    let listaCarrito = JSON.parse(localStorage.getItem("listaProductosCarrito"))
+    document.getElementById('cantProdSeleccionados').innerText = JSON.parse(localStorage.listaProductosCarrito).length+' Productos Seleccionados';
 
+    if(localStorage.listaProductosDeseos != null){
+    document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length;
+    }else{
+    document.getElementById('idDeseos').innerText = 0;
+}
+    let listaCarrito = JSON.parse(localStorage.getItem("listaProductosCarrito"))
+    let total = 0;
     for(let productoEnCanasto of listaCarrito){
-    
+        
         console.log(productoEnCanasto)
         let mostrarProductoEnEsteDiv = document.getElementsByClassName('listaDeProductoPasarelaDePago');    
         let divParaMostrastrProducto = document.createElement('div');
@@ -15,6 +21,9 @@ if(localStorage.listaProductosCarrito != null){
         divParaMostrastrProducto.innerHTML =`<div class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-row align-items-center">
+                                                        <div class="eliminarProductoCanasto">
+                                                        <i id="eliminarProdCanasta" class="fa fa-times text-danger fs-4 p-4 pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar Producto"></i>
+                                                        </div>
                                                         <div>
                                                             <img src="../${productoEnCanasto.imagen}" class="img-fluid rounded-3 imgPago" alt="Shopping item">
                                                         </div>
@@ -30,8 +39,27 @@ if(localStorage.listaProductosCarrito != null){
                                                     </div>
                                                 </div>
                                             </div>`
-        mostrarProductoEnEsteDiv[0].appendChild(divParaMostrastrProducto);                                        
+        mostrarProductoEnEsteDiv[0].appendChild(divParaMostrastrProducto);
+
+        let btnListaCarrito = document.getElementById('eliminarProdCanasta');
+        btnListaCarrito.addEventListener('click',() => {quitarProdDelCarrito('eliminarProdCanasta')
+        });
+
+        total+= parseFloat(productoEnCanasto.precioProducto);   
+
+        //Colocamos dentro del html el subtotal, iva y total
+         document.getElementById('ivaCarrito').innerText ='$ '+parseFloat((total*.21).toFixed(3));
+         document.getElementById('totalCarrito').innerText ='$ '+ total;   
+         document.getElementById('subTotalCarrito').innerText ='$ '+ (total*.79).toFixed(3);                                
     }
+
+    const quitarProdDelCarrito = (idQuitarDelCarrito) =>{
+        const item = listaCarrito.find((prod) => prod.idProducto === idQuitarDelCarrito);
+        debugger;
+        console.log(item);
+    }
+
+
 }else{ //Si el cliente aún no tiene compras, se lo dirige al inicio.
     swal({
 		title: "",
@@ -42,7 +70,7 @@ if(localStorage.listaProductosCarrito != null){
 	  },
 	  function(isConfirm){
 		  if (isConfirm) {
-			  window.location.href = 'http://127.0.0.1:5501/index.html';
+			  window.location.href = '/index.html';
 		 	} 
   });
 }

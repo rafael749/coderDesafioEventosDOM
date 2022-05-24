@@ -4,7 +4,10 @@ if(localStorage.listaProductosCarrito != null){
 document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
 }
 
-let carrito= [];
+//MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE AÑADIDOS A LA LISTA DE DESEOS CARGADOS EN EL LOCALSTORAGE
+if(localStorage.listaProductosDeseos != null){	
+	document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length;
+}
 
 let mostrarProductoCargadosEnSistema = (arr) => {
 
@@ -33,7 +36,8 @@ let mostrarProductoCargadosEnSistema = (arr) => {
 
 
 			let btnListaDeseos = document.getElementById(`${el.idProducto}`);
-			btnListaDeseos.addEventListener("click",listaDeseos);
+			btnListaDeseos.addEventListener("click",() => {agregarListaDeseos(el.idProducto)
+			});
 
 			let btnListaCarrito = document.getElementById(`producto${el.idProducto}`);
 			btnListaCarrito.addEventListener('click',() => {agregarAlCarrito(el.idProducto)
@@ -52,13 +56,37 @@ mostrarProductoCargadosEnSistema(productos);
 let misDeseos = parseInt(document.getElementById('idDeseos').innerText);
 let miCarrito = parseInt(document.getElementById('idCarrito').innerText);
 
-function listaDeseos(id){
-	console.log(`Producto sumado a la lista de Deseos ${id.target.id}`)
-	let agregarDeseo = ++misDeseos;
+const agregarListaDeseos = (idDeseo) => {
+//	console.log(`Producto sumado a la lista de Deseos ${id.target.id}`)
+	//Si el cliente ya tiene compras en el carrito almacenado en el localStorage, se añaden el mismo. SINO en el array carrito[] vacío.
+	let deseos= [];
 
-	document.getElementById('idDeseos').innerText = agregarDeseo;
+	if(localStorage.listaProductosDeseos != null){
+		deseos = JSON.parse(localStorage.listaProductosDeseos);
+	};
 
-	//TODO Crear la misma lógica para añadir al localstorage los deseos
+	//AÑADIMOS EL PRODUCTO SELECCIONADO A deseos[]
+	const item = productos.find((prod) => prod.idProducto === idDeseo);
+
+	deseos.push({
+		"categoriaProducto": item.categoriaProducto,
+		"nombreProducto":item.nombreProducto,
+		"marcaProducto":item.marcaProducto,
+		"precioProducto":item.precioProducto,
+		"modeloProducto":item.modeloProducto,
+		"envioProducto":item.envioProducto,
+		"estadoProducto":item.estadoProducto,
+		"imagen":item.imagen,
+		"idProducto":item.idProducto
+	});
+	
+	console.log("deseos",deseos)
+
+	//PASAMOS CARRITO AL LOCAL STORAGE
+
+	localStorage.setItem("listaProductosDeseos",JSON.stringify(deseos)); 	
+	document.getElementById('idDeseos').innerText = deseos.length
+
 	swal({
 		title: "",
 		text: "¡Producto agregado a la lista de deseos!",
@@ -70,13 +98,16 @@ function listaDeseos(id){
 
 const agregarAlCarrito = (idProd) => {
 
-	//AÑADIMOS EL PRODUCTO SELECCIONADO A CARRITO[]
-	const item = productos.find((prod) => prod.idProducto === idProd);
-	
-	//Si el cliente ya tiene compras en el carrito, se añaden el mismo. SINO en el array carrito[] vacío.
+	//Si el cliente ya tiene compras en el carrito almacenado en el localStorage, se añaden el mismo. SINO en el array carrito[] vacío.
+	let carrito= [];
+
 	if(localStorage.listaProductosCarrito != null){
 	 	carrito = JSON.parse(localStorage.listaProductosCarrito);
 	};
+
+	//AÑADIMOS EL PRODUCTO SELECCIONADO A CARRITO[]
+	const item = productos.find((prod) => prod.idProducto === idProd);
+
 	carrito.push({
 		"categoriaProducto": item.categoriaProducto,
 		"nombreProducto":item.nombreProducto,
