@@ -76,7 +76,7 @@ if(localStorage.listaProductosCarrito != null){
               },
               function(isConfirm){
                   if (isConfirm) {
-                      window.location.href = '/index.html';
+                      window.location.href = '../index.html';
                     } 
           });
         }
@@ -93,7 +93,7 @@ if(localStorage.listaProductosCarrito != null){
 	  },
 	  function(isConfirm){
 		  if (isConfirm) {
-			  window.location.href = '/index.html';
+			  window.location.href = '../index.html';
 		 	} 
   });
 }
