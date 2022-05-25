@@ -18,11 +18,11 @@ if(localStorage.listaProductosCarrito != null){
         let mostrarProductoEnEsteDiv = document.getElementsByClassName('listaDeProductoPasarelaDePago');    
         let divParaMostrastrProducto = document.createElement('div');
         divParaMostrastrProducto.className = "card mb-3";
-        divParaMostrastrProducto.innerHTML =`<div class="card-body">
+        divParaMostrastrProducto.innerHTML =`<div  class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-row align-items-center">
                                                         <div class="eliminarProductoCanasto">
-                                                        <i id="eliminarProdCanasta" class="fa fa-times text-danger fs-4 p-4 pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar Producto"></i>
+                                                        <i id="${productoEnCanasto.idProducto}" class="fa fa-times text-danger fs-4 p-4 pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar Producto"></i>
                                                         </div>
                                                         <div>
                                                             <img src="../${productoEnCanasto.imagen}" class="img-fluid rounded-3 imgPago" alt="Shopping item">
@@ -41,8 +41,8 @@ if(localStorage.listaProductosCarrito != null){
                                             </div>`
         mostrarProductoEnEsteDiv[0].appendChild(divParaMostrastrProducto);
 
-        let btnListaCarrito = document.getElementById('eliminarProdCanasta');
-        btnListaCarrito.addEventListener('click',() => {quitarProdDelCarrito('eliminarProdCanasta')
+        let btnEliminarProd = document.getElementById(`${productoEnCanasto.idProducto}`);
+        btnEliminarProd.addEventListener('click',() => {quitarProdDelCarrito(`${productoEnCanasto.idProducto}`)
         });
 
         total+= parseFloat(productoEnCanasto.precioProducto);   
@@ -54,9 +54,9 @@ if(localStorage.listaProductosCarrito != null){
     }
 
     const quitarProdDelCarrito = (idQuitarDelCarrito) =>{
-        const item = listaCarrito.find((prod) => prod.idProducto === idQuitarDelCarrito);
-        debugger;
+        const item = listaCarrito.find((prod) => prod.idProducto === parseInt(idQuitarDelCarrito));
         console.log(item);
+        debugger;
     }
 
 
