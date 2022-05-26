@@ -87,8 +87,6 @@ if(localStorage.listaProductosCarrito != null){
 		closeOnConfirm: false
 	  },
 	  function(isConfirm){
-		  if (isConfirm) {
-			  window.location.href = '../index.html';
-		 	} 
+		  (isConfirm) ? window.location.href = '../index.html' : false; 
   });
 }
