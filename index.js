@@ -1,13 +1,9 @@
 
 //MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE AÑADIDOS AL CARRITO CARGADOS EN EL LOCALSTORAGE
-if(localStorage.listaProductosCarrito != null){	
-document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
-}
+(localStorage.listaProductosCarrito != null) ? document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length : false;
 
 //MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE AÑADIDOS A LA LISTA DE DESEOS CARGADOS EN EL LOCALSTORAGE
-if(localStorage.listaProductosDeseos != null){	
-	document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length;
-}
+(localStorage.listaProductosDeseos != null) ? document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length : false;
 
 let mostrarProductoCargadosEnSistema = (arr) => {
 
@@ -61,9 +57,7 @@ const agregarListaDeseos = (idDeseo) => {
 	//Si el cliente ya tiene compras en el carrito almacenado en el localStorage, se añaden el mismo. SINO en el array carrito[] vacío.
 	let deseos= [];
 
-	if(localStorage.listaProductosDeseos != null){
-		deseos = JSON.parse(localStorage.listaProductosDeseos);
-	};
+	if(localStorage.listaProductosDeseos != null) ? deseos = JSON.parse(localStorage.listaProductosDeseos) : false;
 
 	//AÑADIMOS EL PRODUCTO SELECCIONADO A deseos[]
 	const item = productos.find((prod) => prod.idProducto === idDeseo);
@@ -101,9 +95,7 @@ const agregarAlCarrito = (idProd) => {
 	//Si el cliente ya tiene compras en el carrito almacenado en el localStorage, se añaden el mismo. SINO en el array carrito[] vacío.
 	let carrito= [];
 
-	if(localStorage.listaProductosCarrito != null){
-	 	carrito = JSON.parse(localStorage.listaProductosCarrito);
-	};
+	(localStorage.listaProductosCarrito != null) ? carrito = JSON.parse(localStorage.listaProductosCarrito) : false;
 
 	//AÑADIMOS EL PRODUCTO SELECCIONADO A CARRITO[]
 	const item = productos.find((prod) => prod.idProducto === idProd);
@@ -139,9 +131,7 @@ const agregarAlCarrito = (idProd) => {
 		closeOnConfirm: false
 	  },
 	  function(isConfirm){
-		  if (isConfirm) {
-			  window.location.href = "html/pasarelaDePago.html"
-		 	} 
+		  (isConfirm) ? window.location.href = "html/pasarelaDePago.html" : false; 
   });
 }
         
