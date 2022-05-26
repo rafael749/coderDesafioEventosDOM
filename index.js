@@ -49,8 +49,8 @@ mostrarProductoCargadosEnSistema(productos);
 
 //AGREGAR A LA LISTA DE DESEOS y COMPRA LOS PRODUCTOS SELECCIONADOS
 
-let misDeseos = parseInt(document.getElementById('idDeseos').innerText);
-let miCarrito = parseInt(document.getElementById('idCarrito').innerText);
+let misDeseos = parseInt(document.getElementById('idDeseos').innerText) || null;
+let miCarrito = parseInt(document.getElementById('idCarrito').innerText)|| null;
 
 const agregarListaDeseos = (idDeseo) => {
 //	console.log(`Producto sumado a la lista de Deseos ${id.target.id}`)
