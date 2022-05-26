@@ -1,6 +1,7 @@
 //MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE AÑADIDOS AL CARRITO CUANDO ESTOS PASAN AL LOCALSTORAGE
-(localStorage.listaProductosDeseos != null) ? ( document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length
-    document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length)
+if(localStorage.listaProductosDeseos != null) }
+    document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
+    document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length;
     
     let listaDeseos = JSON.parse(localStorage.getItem("listaProductosDeseos"))
 
@@ -35,7 +36,7 @@
 			});		                                        
     }
     
-: //Si el cliente aún no tiene compras, se lo dirige al inicio.
+}else{ //Si el cliente aún no tiene compras, se lo dirige al inicio.
     swal({
 		title: "",
 		text: "¡Aún no tienes productos dentro de la lista de deseos!",
