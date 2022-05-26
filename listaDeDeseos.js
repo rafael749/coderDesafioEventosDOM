@@ -1,5 +1,5 @@
 //MUESTRO LOS PRODUCTOS QUE TIENE EL CLIENTE AÑADIDOS AL CARRITO CUANDO ESTOS PASAN AL LOCALSTORAGE
-if(localStorage.listaProductosDeseos != null) }
+if(localStorage.listaProductosDeseos != null) {
     document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
     document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length;
     
