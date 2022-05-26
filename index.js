@@ -57,7 +57,7 @@ const agregarListaDeseos = (idDeseo) => {
 	//Si el cliente ya tiene compras en el carrito almacenado en el localStorage, se añaden el mismo. SINO en el array carrito[] vacío.
 	let deseos= [];
 
-	if(localStorage.listaProductosDeseos != null) ? deseos = JSON.parse(localStorage.listaProductosDeseos) : false;
+	(localStorage.listaProductosDeseos != null) ? deseos = JSON.parse(localStorage.listaProductosDeseos) : false;
 
 	//AÑADIMOS EL PRODUCTO SELECCIONADO A deseos[]
 	const item = productos.find((prod) => prod.idProducto === idDeseo);
