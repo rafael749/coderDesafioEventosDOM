@@ -7,7 +7,7 @@ if(localStorage.listaProductosCarrito != null){
 
     (localStorage.listaProductosDeseos != null) ? document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length : document.getElementById('idDeseos').innerText = 0;
     
-    let listaCarrito = JSON.parse(localStorage.getItem("listaProductosCarrito"))
+    let listaCarrito = JSON.parse(localStorage.getItem("listaProductosCarrito")) || null;
     let total = 0;
     for(let productoEnCanasto of listaCarrito){
         
@@ -39,7 +39,7 @@ if(localStorage.listaProductosCarrito != null){
                                             </div>`
         mostrarProductoEnEsteDiv[0].appendChild(divParaMostrastrProducto);
 
-        let btnEliminarProd = document.getElementById(`${productoEnCanasto.idProducto}`);
+        let btnEliminarProd = document.getElementById(`${productoEnCanasto.idProducto}`) || null;
         btnEliminarProd.addEventListener('click',() => {quitarProdDelCarrito(`${productoEnCanasto.idProducto}`)
         });
 
