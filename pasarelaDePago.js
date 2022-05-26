@@ -5,7 +5,7 @@ if(localStorage.listaProductosCarrito != null){
     document.getElementById('idCarrito').innerText = JSON.parse(localStorage.listaProductosCarrito).length;
     document.getElementById('cantProdSeleccionados').innerText = JSON.parse(localStorage.listaProductosCarrito).length+' Productos Seleccionados';
 
-    if(localStorage.listaProductosDeseos != null) ? document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length : document.getElementById('idDeseos').innerText = 0;
+    (localStorage.listaProductosDeseos != null) ? document.getElementById('idDeseos').innerText = JSON.parse(localStorage.listaProductosDeseos).length : document.getElementById('idDeseos').innerText = 0;
     
     let listaCarrito = JSON.parse(localStorage.getItem("listaProductosCarrito"))
     let total = 0;
